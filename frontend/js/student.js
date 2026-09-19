@@ -33,7 +33,7 @@ async function loadCourses(search = "") {
     try {
 
         let url =
-            "http://localhost:5000/api/courses";
+            "/api/courses";
 
         if (search) {
             url += `?search=${encodeURIComponent(search)}`;
@@ -119,7 +119,7 @@ async function enrollCourse(courseId) {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/enrollments",
+            "/api/enrollments",
             {
                 method: "POST",
 
@@ -174,7 +174,7 @@ async function loadMyEnrollments() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/enrollments/my",
+            "/api/enrollments/my",
             {
                 headers
             }

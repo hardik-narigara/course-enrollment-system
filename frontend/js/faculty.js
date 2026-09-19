@@ -30,7 +30,7 @@ async function loadCourses(search = "") {
 
     try {
 
-        let url = "http://localhost:5000/api/courses";
+        let url = "/api/courses";
 
         if (search) {
             url += `?search=${encodeURIComponent(search)}`;
@@ -148,7 +148,7 @@ document
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/courses",
+                "/api/courses",
                 {
                     method: "POST",
 
@@ -221,7 +221,7 @@ async function editCourse(courseId) {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/courses",
+            "/api/courses",
             {
                 headers
             }
@@ -314,7 +314,7 @@ document
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/courses/${courseId}`,
+                `/api/courses/${courseId}`,
                 {
                     method: "PUT",
 
@@ -419,7 +419,7 @@ async function deleteCourse(courseId) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/courses/${courseId}`,
+            `/api/courses/${courseId}`,
             {
                 method: "DELETE",
                 headers
@@ -488,7 +488,7 @@ async function loadEnrollments() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/enrollments",
+            "/api/enrollments",
             {
                 headers
             }

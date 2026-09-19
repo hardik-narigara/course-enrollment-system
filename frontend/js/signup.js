@@ -106,7 +106,7 @@ signupForm.addEventListener("submit", async (event) => {
     if (role === "student") {
 
         url =
-            "http://localhost:5000/api/auth/signup/student";
+            "/api/auth/signup/student";
 
         body = {
             student_id: studentId.value.trim(),
@@ -119,7 +119,7 @@ signupForm.addEventListener("submit", async (event) => {
     } else {
 
         url =
-            "http://localhost:5000/api/auth/signup/faculty";
+            "/api/auth/signup/faculty";
 
         body = {
             faculty_id: facultyId.value.trim(),
