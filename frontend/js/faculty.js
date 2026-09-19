@@ -1,6 +1,14 @@
 const token = localStorage.getItem("token");
 const userData = localStorage.getItem("user");
 
+function formatDate(dateString) {
+    return String(dateString)
+        .slice(0, 10)
+        .split("-")
+        .reverse()
+        .join("/");
+}
+
 // Check login
 if (!token || !userData) {
     window.location.href = "index.html";
@@ -564,7 +572,7 @@ async function loadEnrollments() {
                                 </td>
 
                                 <td>
-                                    ${enrollment.enrollment_date}
+                                    ${formatDate(enrollment.enrollment_date)}
                                 </td>
 
                             </tr>
