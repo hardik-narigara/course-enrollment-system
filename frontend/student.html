@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div>
+            <h2>Course Enrollment System</h2>
+            <p id="welcomeMessage"></p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <!-- Available Courses -->
+
+        <section class="dashboard-section">
+
+            <h2>Available Courses</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="courseSearch"
+                    placeholder="Search by course code, name or instructor"
+                >
+
+                <button id="searchBtn" class="btn">
+                    Search
+                </button>
+
+            </div>
+
+            <div id="courseMessage"></div>
+
+            <div id="coursesContainer" class="course-grid"></div>
+
+        </section>
+
+
+        <!-- My Enrollments -->
+
+        <section class="dashboard-section">
+
+            <h2>My Enrollments</h2>
+
+            <div id="enrollmentsContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/student.js"></script>
+
+</body>
+
+</html>

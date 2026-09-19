@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Enrollment System - Signup</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <h1>Create Account</h1>
+            <p class="subtitle">Course Enrollment System</p>
+
+            <!-- Role Selection -->
+            <div class="role-selection">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="role"
+                        value="student"
+                        checked
+                    >
+                    Student
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="role"
+                        value="faculty"
+                    >
+                    Faculty
+                </label>
+
+            </div>
+
+            <form id="signupForm">
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <!-- Student Enrollment Number -->
+                <div
+                    class="form-group"
+                    id="studentIdGroup"
+                >
+                    <label for="student_id">
+                        Student Enrollment Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="student_id"
+                        placeholder="Enter 12-digit enrollment number"
+                        minlength="12"
+                        maxlength="12"
+                        pattern="[0-9]{12}"
+                    >
+                </div>
+
+                <!-- Faculty ID -->
+                <div
+                    class="form-group"
+                    id="facultyIdGroup"
+                    style="display: none;"
+                >
+                    <label for="faculty_id">
+                        Faculty ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="faculty_id"
+                        placeholder="Enter faculty ID"
+                    >
+                </div>
+
+                <!-- Faculty Registration Code -->
+                <div
+                    class="form-group"
+                    id="registrationCodeGroup"
+                    style="display: none;"
+                >
+                    <label for="registration_code">
+                        Faculty Registration Code
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registration_code"
+                        placeholder="Enter registration code"
+                    >
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirm_password">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm_password"
+                        placeholder="Confirm password"
+                        required
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Create Account
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+            <p class="signup-link">
+                Already have an account?
+                <a href="index.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/signup.js"></script>
+
+</body>
+</html>

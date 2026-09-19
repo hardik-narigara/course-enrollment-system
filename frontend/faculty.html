@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div>
+            <h2>Course Enrollment System</h2>
+            <p id="welcomeMessage"></p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <!-- Add Course -->
+
+        <section class="dashboard-section">
+
+            <h2>Add New Course</h2>
+
+            <form id="courseForm">
+
+                <div class="form-group">
+                    <label for="course_code">
+                        Course Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="course_code"
+                        placeholder="Example: IT105"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="course_name">
+                        Course Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="course_name"
+                        placeholder="Enter course name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Enter course description"
+                    ></textarea>
+                </div>
+
+
+                <div class="course-form-row">
+
+                    <div class="form-group">
+                        <label for="instructor">
+                            Instructor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="instructor"
+                            placeholder="Enter instructor name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="credits">
+                            Credits
+                        </label>
+
+                        <input
+                            type="number"
+                            id="credits"
+                            min="1"
+                            max="10"
+                            placeholder="4"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Add Course
+                </button>
+
+                <p id="courseFormMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Courses -->
+
+        <section class="dashboard-section">
+
+            <h2>Manage Courses</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="courseSearch"
+                    placeholder="Search courses"
+                >
+
+                <button
+                    id="searchBtn"
+                    class="btn"
+                >
+                    Search
+                </button>
+
+            </div>
+
+            <div
+                id="coursesContainer"
+                class="course-grid"
+            ></div>
+
+        </section>  
+
+
+        <!-- All Enrollments -->
+
+        <section class="dashboard-section">
+
+            <h2>Student Enrollments</h2>
+
+            <div id="enrollmentsContainer"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Edit Course Modal -->
+    <div id="editModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Edit Course</h2>
+
+                <button
+                    type="button"
+                    id="closeModalBtn"
+                    class="close-btn"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <form id="editCourseForm">
+
+                <input
+                    type="hidden"
+                    id="editCourseId"
+                >
+
+                <div class="form-group">
+                    <label for="edit_course_code">
+                        Course Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="edit_course_code"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_course_name">
+                        Course Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="edit_course_name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="edit_description"
+                    ></textarea>
+                </div>
+
+                <div class="course-form-row">
+
+                    <div class="form-group">
+                        <label for="edit_instructor">
+                            Instructor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="edit_instructor"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit_credits">
+                            Credits
+                        </label>
+
+                        <input
+                            type="number"
+                            id="edit_credits"
+                            min="1"
+                            max="10"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelEditBtn"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Update Course
+                    </button>
+
+                </div>
+
+                <p id="editMessage"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/faculty.js"></script>
+
+</body>
+</html>
